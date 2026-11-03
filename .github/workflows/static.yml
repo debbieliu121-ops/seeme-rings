@@ -1,4 +1,3 @@
-
 name: Deploy SEEME site to GitHub Pages
 on:
   push:
@@ -22,6 +21,20 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            /.github/workflows/static.yml
+            /index.html
+            /agent.html
+            /styles.css
+            /agent.css
+            /seeme.js
+            /agent.js
+            /agent-media.mjs
+            /agent-pose.mjs
+            /agent-report.mjs
+            /*.png
+          sparse-checkout-cone-mode: false
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
