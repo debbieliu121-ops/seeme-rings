@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <base href="/seeme-rings/">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101c2a">
+  <meta name="description" content="SEEME 人马压力匹配 Agent 内测版，从骑乘视频中整理马匹福利观察证据。">
+  <meta property="og:title" content="SEEME Welfare Agent">
+  <meta property="og:description" content="让训练先听见马的反馈。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://debbieliu121-ops.github.io/seeme-rings/seeme-welfare-agent-og.png">
+  <title>SEEME Welfare Agent</title>
+  <link rel="stylesheet" href="./agent.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <a class="wordmark" href="./index.html" aria-label="返回 SEEME 首页">SEEME</a>
+    <div class="topbar-meta">
+      <span class="status-dot" aria-hidden="true"></span>
+      INTERNAL RESEARCH PREVIEW
+    </div>
+  </header>
+
+  <main>
+    <section class="hero editorial-hero" aria-labelledby="agent-title">
+      <img class="hero-image" src="/seeme-agent-jump-ribbon-v2.png" alt="黑马在低饱和雾气中完成障碍跳跃，米黄色手绘飘带连接骑手与马匹">
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="hero-index" aria-hidden="true"><span>01</span><i></i><span>WELFARE INTELLIGENCE</span></div>
+      <div class="hero-content">
+        <p class="eyebrow">OBSERVE BEFORE YOU ASK</p>
+        <h1 id="agent-title">LISTEN TO<br><em>THE HORSE</em></h1>
+        <p class="hero-copy">上传一段骑乘视频，将马匹的形态、步态、声音与骑手姿态整理成可复核的观察证据。</p>
+        <div class="hero-actions">
+          <a class="hero-cta" href="#analysis-form"><span>开始一段观察</span><b aria-hidden="true">↘</b></a>
+          <span class="hero-note">VIDEO · POSTURE · SOUND · CONTEXT</span>
+        </div>
+      </div>
+      <div class="hero-pills" aria-label="产品原则">
+        <span>证据优先</span><span>保留不确定性</span><span>人机共同复核</span>
+      </div>
+    </section>
+
+    <section class="signal-atlas" aria-labelledby="signal-title">
+      <div class="atlas-copy">
+        <p class="eyebrow">02 / OBSERVABLE SIGNALS</p>
+        <h2 id="signal-title">不是判断情绪<br>而是读懂变化</h2>
+        <p>同一匹马的耳位、眼周、口鼻与头颈会随环境和互动改变。系统只呈现可见信号，不把一帧画面写成确定结论。</p>
+        <div class="atlas-scale" aria-label="马匹状态观察等级">
+          <span><i>01</i>放松观察</span>
+          <span><i>02</i>持续留意</span>
+          <span><i>03</i>提高关注</span>
+        </div>
+      </div>
+      <figure class="atlas-visual">
+        <img src="/seeme-agent-welfare-ribbon-v2.png" alt="米黄色手绘飘带串联同一匹黑马从放松到较高紧张的三种可观察状态">
+        <figcaption>THE SAME HORSE · DIFFERENT OBSERVABLE SIGNALS</figcaption>
+      </figure>
+    </section>
+
+    <div class="workspace-intro"><p class="eyebrow">03 / ANALYSIS DESK</p><h2>分析工作台</h2><span>从一段短视频开始</span></div>
+    <section class="workspace" aria-label="视频福利观察工作区">
+      <form id="analysis-form" class="glass-panel input-panel">
+        <div class="section-heading">
+          <div><span>01</span><h2>添加观察素材</h2></div>
+          <p>建议使用 5–30 秒且一匹马与一名骑手全身较清晰的视频</p>
+        </div>
+
+        <label class="upload-zone" id="upload-zone" for="video-input">
+          <input id="video-input" type="file" accept="video/mp4,video/quicktime,video/x-m4v,.mov,.mp4,.m4v">
+          <span class="upload-mark" aria-hidden="true">＋</span>
+          <strong>选择或拖入骑乘视频</strong>
+          <small>MP4 · MOV · M4V · 最大 500 MB</small>
+        </label>
+
+        <div class="video-card is-hidden" id="video-card">
+          <video id="video-preview" controls playsinline preload="metadata"></video>
+          <div class="video-meta">
+            <div><strong id="video-name">未选择视频</strong><span id="video-detail"></span></div>
+            <button class="text-button" id="remove-video" type="button">移除视频</button>
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <label><span>马匹名称</span><input name="horseName" autocomplete="off" placeholder="例如 Ferris"></label>
+          <label><span>训练科目</span><select name="discipline"><option>场地训练</option><option>场地障碍</option><option>盛装舞步</option><option>户外骑乘</option><option>调教与地面训练</option><option>其他</option></select></label>
+          <label><span>训练场地</span><input name="location" autocomplete="off" placeholder="室内场 · 室外场 · 户外"></label>
+          <label><span>本次实际训练时长 分钟</span><input name="actualSessionMinutes" type="number" min="1" max="240" inputmode="numeric" placeholder="例如 35"></label>
+          <label><span>主观训练强度</span><select name="perceivedIntensity"><option value="">未填写</option><option value="LOW">轻松</option><option value="MEDIUM">中等</option><option value="HIGH">较高</option></select></label>
+          <label><span>休息情况</span><input name="restNote" autocomplete="off" placeholder="例如 中途慢步休息 5 分钟"></label>
+          <label class="wide-field"><span>这次希望重点观察什么</span><textarea name="note" rows="3" placeholder="例如 右侧弯曲时是否出现紧张 训练后半段节奏是否改变"></textarea></label>
+        </div>
+
+        <label class="consent-row">
+          <input id="authorization" type="checkbox">
+          <span>我确认已获得视频中人员授权，并同意将抽取的关键画面用于本次分析</span>
+        </label>
+
+        <div class="privacy-note"><span aria-hidden="true">○</span>原始视频默认不上传保存，只处理本次分析所需的压缩画面和声音摘要</div>
+        <p class="form-error" id="form-error" role="alert"></p>
+        <button class="primary-button" id="analyze-button" type="submit"><span>开始福利观察</span><b aria-hidden="true">↗</b></button>
+      </form>
+
+      <aside class="glass-panel method-panel">
+        <div class="section-heading compact"><div><span>METHOD</span><h2>观察框架</h2></div></div>
+        <ol class="method-list">
+          <li><i>01</i><div><strong>形态与动作</strong><span>耳位 眼周 口鼻 头颈 尾部 步态</span></div></li>
+          <li><i>02</i><div><strong>互动与环境</strong><span>骑手动作 扶助 场地 声音与遮挡</span></div></li>
+          <li><i>03</i><div><strong>证据与推断分离</strong><span>模型只能基于可见线索提出可能解释</span></div></li>
+          <li><i>04</i><div><strong>由教练最终复核</strong><span>保留不同意见与素材不足的情况</span></div></li>
+        </ol>
+        <details class="technical-evidence method-evidence">
+          <summary>开源姿态测量说明</summary>
+          <p>当前本机轻量版使用 MediaPipe 测量骑手姿态与重心趋势</p>
+          <p>连接 MMPose 后自动升级为马匹头颈 背线 四肢与骑手联合分析</p>
+          <p>测量结果用于训练观察 不代表足底压力或精确生物力学诊断</p>
+        </details>
+        <p class="method-disclaimer">本工具不构成医疗诊断，不替代兽医、教练或动物行为专家。</p>
+      </aside>
+    </section>
+
+    <section class="glass-panel processing-panel is-hidden" id="processing-panel" aria-live="polite">
+      <div class="processing-orbit" aria-hidden="true"><span></span></div>
+      <div>
+        <p class="eyebrow">OBSERVATION IN PROGRESS</p>
+        <h2 id="processing-title">正在读取视频</h2>
+        <p id="processing-copy">所有处理步骤都将在这里说明</p>
+      </div>
+      <ol class="progress-steps" id="progress-steps">
+        <li data-step="read">读取视频</li>
+        <li data-step="frames">抽取画面</li>
+        <li data-step="pose">姿态测量</li>
+        <li data-step="audio">分析声音</li>
+        <li data-step="evidence">综合证据</li>
+        <li data-step="report">生成报告</li>
+      </ol>
+    </section>
+
+    <section class="report-section is-hidden" id="report-section" aria-labelledby="report-title">
+      <div class="report-header">
+        <div><p class="eyebrow">WELFARE OBSERVATION REPORT</p><h2 id="report-title">本次福利观察</h2></div>
+        <div class="report-actions"><button type="button" id="print-report">打印或保存 PDF</button><button type="button" id="new-analysis">分析新视频</button></div>
+      </div>
+
+      <div class="report-grid">
+        <article class="glass-panel attention-card">
+          <div class="attention-top"><span>福利关注等级</span><em id="report-mode">LIVE</em></div>
+          <strong id="attention-level">信息不足</strong>
+          <div class="confidence"><span>证据置信度</span><div><i id="confidence-bar"></i></div><b id="confidence-value">0%</b></div>
+          <p id="report-summary"></p>
+        </article>
+
+        <article class="glass-panel evidence-card">
+          <div class="card-title"><span>02</span><h3>可观察证据</h3></div>
+          <div class="evidence-legend" aria-label="证据结构"><span>马匹表现</span><span>骑手动作</span><span>可能原因</span><span>可能影响</span><span>调整建议</span></div>
+          <div class="timeline" id="visual-evidence"></div>
+          <details class="technical-evidence pose-evidence" id="pose-evidence">
+            <summary>查看 MMPose 与 MediaPipe 测量</summary>
+            <div id="pose-measurements"></div>
+          </details>
+        </article>
+
+        <article class="glass-panel list-card">
+          <div class="card-title"><span>03</span><h3>声音与环境</h3></div>
+          <ul id="audio-evidence"></ul>
+        </article>
+
+        <article class="glass-panel list-card positive-card">
+          <div class="card-title"><span>04</span><h3>积极信号</h3></div>
+          <ul id="positive-signals"></ul>
+        </article>
+
+        <article class="glass-panel list-card uncertainty-card">
+          <div class="card-title"><span>05</span><h3>不确定性</h3></div>
+          <ul id="uncertainties"></ul>
+        </article>
+
+        <article class="glass-panel action-card recommendation-card">
+          <div class="card-title"><span>06</span><h3>下一步建议</h3></div>
+          <div class="action-groups">
+            <section><h4>立即调整</h4><ol id="immediate-actions"></ol></section>
+            <section><h4>训练中</h4><ol id="during-session-actions"></ol></section>
+            <section><h4>下马后</h4><ol id="after-ride-actions"></ol></section>
+            <section><h4>专业复核</h4><ol id="professional-review-actions"></ol></section>
+          </div>
+        </article>
+
+        <article class="glass-panel coach-card">
+          <div class="card-title"><span>07</span><h3>教练复核</h3></div>
+          <div class="review-options" role="group" aria-label="教练复核状态">
+            <button type="button" data-review="CONFIRMED">确认报告</button>
+            <button type="button" data-review="EDITED">需要修正</button>
+            <button type="button" data-review="NEEDS_MEDIA">补充素材</button>
+          </div>
+          <label><span>复核备注</span><textarea id="coach-note" rows="3" placeholder="记录教练的现场判断或需要补充的证据"></textarea></label>
+          <button class="secondary-button" id="save-review" type="button">保存复核</button>
+        </article>
+      </div>
+
+      <p class="report-disclaimer" id="report-disclaimer">本报告仅用于马匹福利观察与训练决策辅助，不构成医疗诊断。</p>
+    </section>
+
+    <section class="history-section" aria-labelledby="history-title">
+      <div class="report-header"><div><p class="eyebrow">LOCAL OBSERVATION LOG</p><h2 id="history-title">OBSERVATION ARCHIVE<small>本机记录</small></h2></div><button class="text-button history-clear" id="clear-history" type="button">CLEAR LOG<small>清空</small></button></div>
+      <div class="history-list" id="history-list"><p class="empty-history">分析完成后，报告会保存在这台设备上。</p></div>
+    </section>
+  </main>
+
+  <footer><span>SEEME · NEVER TAMED</span><span>WELFARE BEFORE PERFORMANCE</span></footer>
+  <script type="module" src="./agent.js"></script>
+</body>
+</html>

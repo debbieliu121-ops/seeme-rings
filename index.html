@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <base href="/seeme-rings/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#050505">
+  <meta name="description" content="SEEME 以黑马为视觉核心，通过 SEIS 戒指连接缰绳压力、骑手心率与人与马之间不可见的交流。">
+  <meta property="og:title" content="SEEME — SeeMe Equine Intelligence System">
+  <meta property="og:description" content="Feel beyond words. 一套把缰绳压力、骑手生理信号与动作时序连接起来的可穿戴感知系统。">
+  <meta property="og:type" content="website">
+  <title>SEEME — SeeMe Equine Intelligence System</title>
+  <link rel="icon" href="/seis-ring.png">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="SEEME 首页">SEE<span>ME</span></a>
+    <div class="header-status"><i></i> SEIS / PROTOTYPE 01</div>
+    <nav class="nav-links" aria-label="主导航">
+      <a href="#philosophy">Manifesto</a>
+      <a href="#seis">SEIS</a>
+      <a href="#lab">Live Lab</a>
+      <a href="#system">System</a>
+      <a href="./agent.html">Welfare Agent</a>
+    </nav>
+    <button class="menu-button" type="button" aria-expanded="false" aria-label="打开导航"><span></span><span></span></button>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-orbit orbit-one" aria-hidden="true"></div>
+      <div class="hero-orbit orbit-two" aria-hidden="true"></div>
+      <div class="hero-beam" aria-hidden="true"></div>
+      <div class="hero-horse-wrap">
+        <img src="/seeme-horse-hero.png" alt="银色轮廓光中的黑马" class="hero-horse">
+        <div class="horse-scan" aria-hidden="true"></div>
+      </div>
+
+      <div class="hero-index"><span>01</span><span>THE UNTAMED SIGNAL</span></div>
+      <div class="hero-copy">
+        <p class="eyebrow">EQUESTRIAN INTELLIGENCE / CHANGSHA</p>
+        <h1>FEEL<br><em>BEYOND</em><br>WORDS.</h1>
+        <p class="hero-intro">当语言停止，压力、节奏与身体仍在说话。<br>SEEME 让人与马之间不可见的连接，被温柔地感知。</p>
+        <a class="hero-cta" href="#seis"><span>ENTER SEIS</span><b>↘</b></a>
+      </div>
+
+      <div class="hero-telemetry" aria-hidden="true"><span>LIVE SIGNAL</span><b>100 HZ</b></div>
+      <div class="hero-footer"><span>WE WERE NEVER SEPARATE.</span><span>SCROLL TO LISTEN ↓</span></div>
+    </section>
+
+    <section class="philosophy section" id="philosophy">
+      <div class="section-meta reveal"><span>01 / MANIFESTO</span><span>RELATIONSHIP BEFORE CONTROL</span></div>
+      <p class="manifesto reveal">A HORSE DOESN’T NEED<br>ANOTHER DEVICE THAT<br><em>COMMANDS.</em></p>
+      <div class="manifesto-lower reveal">
+        <span class="manifesto-cn">一匹马不需要更多命令。<br>它需要人学会倾听。</span>
+        <p>SEEME 从人与马之间最细微的接触开始：手指的压力、呼吸的变化、一次犹豫和一次放松。技术不介入关系，而是把原本被忽略的信号重新交还给人。</p>
+      </div>
+    </section>
+
+    <section class="seis-intro section" id="seis">
+      <div class="section-meta reveal"><span>02 / PRODUCT SYSTEM</span><span>WEARABLE EQUINE INTELLIGENCE</span></div>
+      <div class="seis-title reveal">
+        <h2>SEIS<sup>®</sup></h2>
+        <p>SeeMe Equine<br>Intelligence System</p>
+      </div>
+      <div class="seis-definition reveal">
+        <p>一套把<strong>缰绳压力、骑手生理信号与动作时序</strong>连接起来的可穿戴感知系统。</p>
+        <span>它不是替你骑马的 AI。<br>它让你更清楚自己正在如何与马沟通。</span>
+      </div>
+    </section>
+
+    <section class="ring-lab section">
+      <div class="ring-grid">
+        <div class="ring-copy reveal">
+          <p class="eyebrow">THE REIN RING / RR–01</p>
+          <h2>A RING<br>THAT <em>LISTENS.</em></h2>
+          <p class="ring-summary">把压力感知戴在手指上。RR–01 位于骑手与缰绳接触最直接的位置，在动作发生的瞬间读懂力量与节奏。</p>
+          <div class="detail-tabs" role="tablist" aria-label="戒指功能详情">
+            <button class="active" type="button" role="tab" aria-selected="true" data-detail="0"><span>01</span><b>REIN PRESSURE</b><i>＋</i></button>
+            <button type="button" role="tab" aria-selected="false" data-detail="1"><span>02</span><b>RIDER BIOMETRICS</b><i>＋</i></button>
+            <button type="button" role="tab" aria-selected="false" data-detail="2"><span>03</span><b>HAPTIC LANGUAGE</b><i>＋</i></button>
+            <button type="button" role="tab" aria-selected="false" data-detail="3"><span>04</span><b>EDGE INTELLIGENCE</b><i>＋</i></button>
+          </div>
+        </div>
+
+        <div class="ring-stage reveal">
+          <div class="ring-halo" aria-hidden="true"></div>
+          <div class="ring-image-wrap"><img src="/seis-ring.png" alt="SEIS RR–01 黑钛智能缰绳戒指" class="ring-image"></div>
+          <button class="hotspot hotspot-1 active" type="button" data-detail="0" aria-label="查看双通道缰绳压力"><span>01</span></button>
+          <button class="hotspot hotspot-2" type="button" data-detail="1" aria-label="查看骑手生理信号"><span>02</span></button>
+          <button class="hotspot hotspot-3" type="button" data-detail="2" aria-label="查看触觉反馈"><span>03</span></button>
+          <button class="hotspot hotspot-4" type="button" data-detail="3" aria-label="查看端侧智能"><span>04</span></button>
+          <div class="ring-readout" aria-live="polite">
+            <div><span class="detail-label">01 / REIN PRESSURE</span><b class="detail-spec">100 HZ / ±0.1 N</b></div>
+            <h3 class="detail-title">双通道缰绳压力</h3>
+            <p class="detail-text">左右两侧微型力传感器以 100Hz 捕捉接触变化，识别持续拉力、瞬时冲击与手部不对称。</p>
+          </div>
+          <span class="drag-note">MOVE CURSOR TO INSPECT</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="live-lab section" id="lab">
+      <div class="section-meta reveal"><span>03 / LIVE SIGNAL LAB</span><span>SIMULATED TRAINING SESSION</span></div>
+      <div class="lab-head reveal">
+        <h2>DON’T JUST READ IT.<br><em>FEEL THE DIFFERENCE.</em></h2>
+        <div><span class="live-dot is-live">LIVE</span><button class="signal-toggle" type="button">PAUSE SIGNAL</button></div>
+      </div>
+
+      <div class="lab-console reveal">
+        <div class="console-top">
+          <span>SESSION / FIELD TEST 014</span>
+          <div class="mode-switch" aria-label="训练情景">
+            <button class="active" type="button" data-mode="contact">Soft Contact</button>
+            <button type="button" data-mode="transition">Transition</button>
+            <button type="button" data-mode="turn">Tight Turn</button>
+          </div>
+          <span>LINK / RR–01 CONNECTED</span>
+        </div>
+
+        <div class="console-main">
+          <div class="signal-visual">
+            <canvas class="waveform" aria-label="左右缰绳压力实时波形"></canvas>
+            <div class="signal-legend"><span><i class="legend-left"></i>LEFT REIN</span><span><i class="legend-right"></i>RIGHT REIN</span></div>
+          </div>
+          <div class="live-metrics">
+            <article><span>LEFT PRESSURE</span><strong><span class="left-value">31</span><small>%</small></strong><i class="left-bar"></i></article>
+            <article><span>RIGHT PRESSURE</span><strong><span class="right-value">34</span><small>%</small></strong><i class="right-bar"></i></article>
+            <article><span>RIDER HEART RATE</span><strong><span class="heart-value">78</span><small>BPM</small></strong><i class="heart-bar"></i></article>
+            <article><span>CONNECTION SCORE</span><strong><span class="score-value">94</span><small>/100</small></strong><i class="score-bar"></i></article>
+          </div>
+        </div>
+
+        <div class="pressure-controls">
+          <label><span>模拟左缰绳压力</span><b class="left-control-value">31%</b><input class="left-range" type="range" min="10" max="86" value="31"></label>
+          <label><span>模拟右缰绳压力</span><b class="right-control-value">34%</b><input class="right-range" type="range" min="10" max="86" value="34"></label>
+        </div>
+
+        <div class="seis-insight">
+          <div><span>SEIS INSIGHT</span><strong class="state-value">BALANCED</strong></div>
+          <p class="signal-note">节奏稳定，左右接触接近。保持呼吸与肘部的弹性。</p>
+          <b class="balance-ring"><span>94</span></b>
+        </div>
+      </div>
+    </section>
+
+    <section class="system section" id="system">
+      <div class="section-meta reveal"><span>04 / HOW SEIS THINKS</span><span>SIGNAL → CONTEXT → UNDERSTANDING</span></div>
+      <div class="system-head reveal">
+        <h2>FROM FORCE<br>TO <em>FEELING.</em></h2>
+        <p>真正重要的不是记录了多少数据，而是能否在正确的时刻，给出不打扰关系的反馈。</p>
+      </div>
+      <div class="system-flow reveal">
+        <article><span>01</span><i class="flow-sensor"></i><h3>SENSE</h3><p>戒指捕捉左右压力、脉搏与动作微变化。</p></article>
+        <article><span>02</span><i class="flow-fusion"></i><h3>FUSE</h3><p>SEIS 将多个信号放回同一时间线理解。</p></article>
+        <article><span>03</span><i class="flow-read"></i><h3>READ</h3><p>识别不对称、压力峰值与重复模式。</p></article>
+        <article><span>04</span><i class="flow-return"></i><h3>RETURN</h3><p>通过克制触觉与训练复盘，把理解还给骑手。</p></article>
+      </div>
+      <div class="system-note reveal">
+        <span>DESIGN PRINCIPLE / 001</span>
+        <p>Technology should make the relationship more visible — never replace it.</p>
+        <b>技术应让关系更清晰，而不是取代关系。</b>
+      </div>
+    </section>
+
+    <section class="brand-ecology section">
+      <div class="section-meta reveal"><span>05 / SEEME ECOLOGY</span><span>ONE BRAND / MANY FORMS</span></div>
+      <div class="ecology-grid">
+        <div class="ecology-title reveal"><h2>NOT A DEVICE.<br>A NEW WAY<br>OF <em>SEEING.</em></h2></div>
+        <div class="ecology-items reveal">
+          <article><span>01</span><h3>OBJECT</h3><p>以马术关系为原型的珠宝与可穿戴设计。</p></article>
+          <article><span>02</span><h3>INTELLIGENCE</h3><p>围绕跨物种沟通展开的感知与 AI 实验。</p></article>
+          <article><span>03</span><h3>CULTURE</h3><p>展览、田野、课程与线下骑行文化现场。</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-kicker"><span>SEEME / EQUESTRIAN INTELLIGENCE</span><span>CHANGSHA / CHINA</span></div>
+    <p>WE WERE<br>NEVER<br><em>SEPARATE.</em></p>
+    <div class="footer-bottom"><span>© 2026 SEEME</span><a href="#top">BACK TO SIGNAL ↑</a><span>SEIS CONCEPT / V1.0</span></div>
+  </footer>
+
+  <script src="/seeme.js" defer></script>
+</body>
+</html>
